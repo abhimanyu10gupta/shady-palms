@@ -6,7 +6,7 @@ const Map = () => {
   return (
     <div className='flex w-screen'>
     <GoogleMapsEmbed
-      apiKey="AIzaSyDQcaBd3g_Nr8NdAXDGp790AcrnuJwilAg"
+      apiKey={process.env.GOOGLE_KEY as string}
       height={300}
       width="100%;"
       mode="place"
