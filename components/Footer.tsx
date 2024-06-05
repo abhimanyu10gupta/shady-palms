@@ -1,12 +1,14 @@
-import { Divider } from '@mui/material'
 import React from 'react'
 import Image from 'next/image'
 import ShadyLogo  from '@/public/ShadyLogoWhite.png';
+import { Separator } from '@/components/ui/separator';
+import Map from './Map';
 
 const Footer = () => {
   return (
-    <div className='w-full bg-black text-white'>
+    <div className='w-full bg-[#0D0C11] text-white'>
       <div className='flex flex-col'>
+      <Map />
         <div className='basis-4/5 flex justify-center'>
           <div className='flex flex-col justify-center m-auto basis-1/3'>
             <div className='flex flex-col justify-center items-center'>
@@ -59,7 +61,7 @@ Sunday 11am-8:30pm<br />
           </div>
 
         </div>
-        <Divider />
+        <Separator />
         <div className='flex justify-center basis-1/5'>
         © 2024 by Shady Palms. Powered by Vercel.
         </div>
