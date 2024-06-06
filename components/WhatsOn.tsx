@@ -2,6 +2,9 @@ import Image from 'next/image'
 import React, { Fragment } from 'react'
 import ShadyLogo from '../public/ShadyLogoWhite.png'
 import { Button } from './ui/button';
+import Event1 from '../public/event1.png'
+import Event2 from '../public/event2.png'
+import Event3 from '../public/image5.png'
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -17,27 +20,32 @@ const MenuProps = {
 
 const events = [
     {
-    title: "Happy Hour",
-    description: "20% on House Spirits",
-    days: "Wednesday and Sunday 3pm-6pm"
+        title: "Happy Hour",
+        description: "20% on House Spirits",
+        days: "Wednesday and Sunday 3pm-6pm",
+        image: Event3,
     },
     {
         title: "Trivia Night",
         description: "Trivia Night with Aemon",
-        days: "Wednesday at 5:30pm"
+        days: "Wednesday at 5:30pm",
+        image: Event2,
+
     },
     {
         title: "Live Music",
         description: "with Aoife Taurus",
-        days: "Sunday 3pm-5pm"
+        days: "Sunday 3pm-5pm",
+        image: Event1,
+
     },
 ]
 
 const WhatsOn = () => {
   return (
-    <div className='text-white w-full'>
+    <div id="events" className='text-white w-full'>
         <div className='flex flex-col'>
-            <div className='p-48'>
+            <div className='p-10 pt-20 md:p-20'>
                 <h1 className='text-6xl font-bold'>
                     What's On
                 </h1>
@@ -46,62 +54,64 @@ const WhatsOn = () => {
             <div className='container flex w-full flex-col justify-center'>
            {events.map((event, i) => {
             return(
-            i%2===0 ? <Fragment>
-<div className='container flex w-full justify-center'>
-                <div className='basis-1/2 flex justify-center'>
+            i%2===0 ? <Fragment key={i}>
+<div className='flex flex-col sm:flex-row w-full justify-center pt-10 pb-10'>
+                <div className='basis-1/2 flex w-full justify-center'>
                     <Image 
-                        src={ShadyLogo}
+                        src={event.image}
                         alt={""}
+                        width={500}
+                        height={500}
                     />
                 </div>
-                <div className='basis-1/2  flex justify-center'>
+                <div className='basis-1/2 flex justify-start pt-6'>
                     <div className='flex flex-col justify-center'>
-                        <h2>
+                        <h2 className='text-2xl '>
                             {event.title}
                         </h2>
-                        <p>
+                        <p className='pt-2'>
                             {event.description}
                         </p>
-                        <p>
+                        <p className='pt-2'>
                             {event.days}
                         </p>
-                        <Button>
+                        <Button className='pt-4'>
                             Book a table
                         </Button>
 
                     </div>
                 </div>
-
                 </div>
             </Fragment>
             : 
-            <Fragment>
-<div className='container flex w-full justify-center'>
-<div className='basis-1/2  flex justify-center'>
-                    <div className='flex flex-col justify-center'>
-                        <h2>
+            <Fragment key={i}>
+                <div className='flex sm:flex-row flex-col-reverse md:flex w-full justify-center'>
+                <div className='basis-1/2 flex'>
+                <div className='flex flex-col pt-6 justify-center'>
+                        <h2 className='text-2xl '>
                             {event.title}
                         </h2>
-                        <p>
+                        <p className='pt-2'>
                             {event.description}
                         </p>
-                        <p>
+                        <p className='pt-2'>
                             {event.days}
                         </p>
-                        <Button>
+                        <Button className='pt-4'>
                             Book a table
                         </Button>
 
                     </div>
                 </div>
-                <div className='basis-1/2 flex justify-center'>
+                <div className='basis-1/2 flex w-full justify-center'>
                     <Image 
-                        src={ShadyLogo}
+                        src={event.image}
+                        width={500}
+                        height={500}
+
                         alt={""}
                     />
                 </div>
-
-
                 </div>
             </Fragment>
             )})}

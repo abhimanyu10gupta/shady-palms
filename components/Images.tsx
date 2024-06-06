@@ -5,32 +5,32 @@ import Image1 from '@/public/image1.png'
 import Image2 from '@/public/image2.png'
 import Image3 from '@/public/image3.png'
 import Image4 from '@/public/image4.png'
+import Image5 from '@/public/image5.png'
 
 const Images = () => {
   return (
     <div className='text-white w-full '>
-        <div className='flex justify-center font-bold text-6xl p-36'>
+        <div className='flex justify-center text-center font-bold text-5xl p-5 pt-20 pb-20 md:p-36'>
         Come on down & Grab a Pint
         </div>
 
-        <div className='flex h-[652px]'>
-            <div className='w-1/2 h-full m-auto relative'>
+        <div className='flex flex-col p-0 md:flex-row h-screen md:h-[652px]'>
+            <div className='w-full h-1/2 md:w-1/2 md:h-full m-auto relative'>
             <Image 
                 src={Image2}
                 alt={""}
-                layout="fill" objectFit="cover"
-                style={{padding: 4}}
-
+                fill
+                className='p-1'
                 />
             </div>
-            <div className='w-1/2 flex flex-col h-full'>
+            <div className='w-full h-1/2 md:w-1/2 md:h-full flex flex-col '>
                     <div className='flex h-1/2'>
                     <div className='w-1/2 h-full relative p-1'>
                         <Image 
                             src={Image1}
                             alt={""}
                             layout="fill" objectFit="cover"
-                            style={{padding: 4}}
+                            className='p-1'
 
                             
                         />
@@ -40,7 +40,7 @@ const Images = () => {
                             src={Image3}
                             alt={""}
                             layout="fill" objectFit="cover"
-                            style={{padding: 4}}
+                            className='p-1'
 
                         />
                     </div>
@@ -52,15 +52,15 @@ const Images = () => {
                             src={Image4}
                             alt={""}
                             layout="fill" objectFit="cover"
-                            style={{padding: 4}}
-                        />
+                            className='p-1'
+                            />
                     </div>
                     <div className='w-1/2 h-full relative p-1'>
                         <Image 
-                            src={ShadyLogo}
+                            src={Image5}
                             alt={""}
                             layout="fill" objectFit="cover"
-                            style={{padding: 4}}
+                            className='p-1'
 
                         />
                     </div>

@@ -1,65 +1,61 @@
 import React from 'react'
 import Image from 'next/image'
-import Navbar from './Navbar'
 import ShadyBanner from '../public/ShadyBanner.png'
 import ShadyLogoWhite from '../public/ShadyLogoWhite.png'
 import { Button } from './ui/button'
 import { Separator } from './ui/separator'
+import Link from 'next/link'
 
 
 const Hero = () => {
   return (
 
-    <div className='w-screen min-h-[990px] top-0'>
-      <div className="z-0 mx-auto text-center md:mb-20 lg:mb-[6.25rem]">
-      <div className='flex pt-16 justify-center m-auto min-h-[990px] text-white z-10'>
-        <div className=' bg-[#0D0C11] w-[600px] h-[740px] rounded-t-full flex flex-col ' >
-          <div className='flex justify-center pt-24'>
-          <Image 
-                src={ShadyLogoWhite}
-                alt= "shady_logo"
-                height={160}
-                width={160}
-                
-                />
+    <div className='w-screen min-h-[650px]  top-0'>
+      <div className="z-0 mx-auto text-center mb-0 md:mb-20 lg:mb-[6.25rem] ">
+        <div className='flex pt-10 md:pt-24 sm:justify-evenly m-auto min-h-[650px]  
+          text-white z-10 bg-[#0D0C11] rounded-t-full mt-20 md:w-[600px] 
+          h-[740px] md:mt-0 flex-col sm:h-[990px]'>
+          <div className='flex pt-12 sm:pt-0 justify-center '>
+            <Image 
+                  src={ShadyLogoWhite}
+                  alt= "shady_logo"
+                  height={160}
+                  width={160}
+                  
+                  />
           </div>
 
-          <h1 className="h1 mb-6 text-4xl pt-24">
-            Shady Palms Bar & Cafe
-            <span className="inline-block text-xl pt-12">
-              Your local StoCos Bar
+          <h1 className="h1 md:mb-6 text-6xl pt-12 md:pt-24">
+            Shady Palms<br />
+            <span className='text-9xl'>
+              BAR
             </span>
           </h1>
-          <div className="pt-12 pb-8">
-          <Button>
+          
+          <span className="inline-block text-xl pt-6 md:pt-12">
+              The Village Local
+            </span>
+          <div className="pt-6 md:pt-12 pb-8 text-[#FBB117]">
+          <Button variant={'outline'} className='border-[#FBB117]'>
+            <Link href='/booking'>
             Book a Table
+
+            </Link>
           </Button>
           </div>
-          <div className='w-2/3 m-auto'>
+          <div className='w-2/3 mx-auto'>
             <Separator />
 
           </div>
 
-          <div className='pb-12'>
+          <div className='pb-12 pt-6 sm:pt-0'>
             <p>
             427 Logan Road, Stones Corner QLD 4120
             </p>
           </div>
-          </div>
- 
-          </div>
-
-        {/* <div className='-z-10 top-0'>       */}
-          {/* <Image 
-          src={ShadyBanner}
-          alt={'shady_banner'}
-          sizes="100vw"
-          
-        /> */}
-      {/* </div> */}
-
+        </div>
       </div>
-      </div>
+    </div>
 
   )
 }

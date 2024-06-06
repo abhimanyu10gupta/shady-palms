@@ -1,11 +1,11 @@
 
 "use client" 
 
-import Navbar from "@/components/Navbar";
 import "../globals.css";
 import Image from "next/image";
 import ShadyBanner from '../../public/ShadyBanner.png'
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 export default function RootLayout({
   children,

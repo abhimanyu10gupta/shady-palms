@@ -79,32 +79,34 @@ function onSubmit(data: z.infer<typeof formSchema>) {
 
 }
   return (
-    <div className='w-screen flex justify-center p-24 flex-col '>
+    <div className='w-screen flex justify-center p-5 pt-20 pb-20 font-bold md:p-24 flex-col '>
       <div className='w-full flex justify-center'>
         <p className='text-white text-6xl '>
           Reserve a Table
         </p>
       </div>
 
-      <div className='flex w-full justify-center text-white p-32 md:flex-col m-auto'>
+      <div className='flex w-full justify-center text-white pt-16 md:p-32 md:flex-col m-auto'>
       <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <div className='flex justify-center'>
+        <div className='flex flex-col sm:flex-row justify-evenly'>
+          <div className="pb-2">
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="">
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder= "" {...field} />
+                  <Input placeholder= "" {...field} className='' />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <div>
-            <FormField
+          </div>
+          <div className="pt-2">
+          <FormField
               control={form.control}
               name="phone"
               render={({ field }) => (
@@ -117,11 +119,14 @@ function onSubmit(data: z.infer<typeof formSchema>) {
                 </FormItem>
               )}
             />
+
           </div>
 
+           
         </div>
+        <div className='flex flex-col sm:flex-row'>
         <div className='flex basis-1/5 flex-col justify-center m-auto' >
-          <div className='text-white flex'>
+          <div className='text-white flex justify-center'>
             <FormField
             control={form.control}
             name="partySize"
@@ -147,7 +152,7 @@ function onSubmit(data: z.infer<typeof formSchema>) {
           </div>
           </div>
           <div className='flex basis-1/5 flex-col m-auto'>
-            <div className='flex'>
+            <div className='flex justify-center'>
               <FormField
                 control={form.control}
                 name="date"
@@ -193,7 +198,7 @@ function onSubmit(data: z.infer<typeof formSchema>) {
           </div>
           <div className='flex basis-1/5 flex-col m-auto'>
 
-            <div className='flex'>
+            <div className='flex justify-center'>
             <FormField
             control={form.control}
             name="time"
@@ -218,9 +223,11 @@ function onSubmit(data: z.infer<typeof formSchema>) {
             />
             </div>
           </div>
-                <div className='flex basis-1/5 justify-center items-center' >
-                  <Button type="submit">Reserve Table</Button>
-                </div>
+        </div>
+        
+        <div className='flex basis-1/5 justify-center items-center' >
+          <Button type="submit">Reserve Table</Button>
+        </div>
           </form>
         </Form>
 

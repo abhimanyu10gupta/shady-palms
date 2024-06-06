@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
 import { Inter, Mulish } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import { Satisfy, Lora } from "next/font/google"
 
 const inter = Inter({ subsets: ["latin"] });
 
 //👇 Configure our font object
 const mulish = Mulish({
+  subsets: ['latin'],
+})
+
+const stylish = Satisfy({
+  subsets: ['latin'],
+  weight: "400",
+})
+
+const lora = Lora({
   subsets: ['latin'],
 })
 
@@ -23,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={mulish.className}>{children}</body>
+      <body className={lora.className}>{children}</body>
     </html>
   );
 }
