@@ -44,7 +44,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className='flex justify-end sm:hidden relative my-4'>
+          <div className='flex justify-end md:hidden relative my-4'>
             <Image 
                 src={ShadyLogoWhite}
                 alt= "shady_logo"

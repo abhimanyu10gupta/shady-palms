@@ -18,7 +18,7 @@ export default function Home() {
     <div className=''>
 
       <div className="-z-10 fixed top-0">
-        <div className="bg-[linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 1))] w-screen max-w-screen h-[350px] md:h-[962px] relative">
+        <div className="bg-[linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 1))] w-screen max-w-screen h-[350px] md:h-[1000px] relative">
           <Image 
             src={ShadyBanner5}
             alt={'shady_banner'}
@@ -40,7 +40,7 @@ export default function Home() {
 
       <div className="z-10 flex flex-col relative">
         <Hero />
-        <div className="p-0  bg-[#0D0C11]">
+        <div className="p-0 z-10 bg-[#0D0C11] relative">
         
 
           <About />

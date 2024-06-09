@@ -10,11 +10,11 @@ import Link from 'next/link'
 const Hero = () => {
   return (
 
-    <div className='w-screen min-h-[650px]  top-0'>
+    <div className='w-screen min-h-[740px] top-0'>
       <div className="z-0 mx-auto text-center mb-0 md:mb-20 lg:mb-[6.25rem] ">
         <div className='flex pt-10 md:pt-24 sm:justify-evenly m-auto min-h-[650px]  
           text-white z-10 bg-[#0D0C11] rounded-t-full mt-20 md:w-[600px] 
-          h-[740px] md:mt-0 flex-col sm:h-[990px]'>
+          h-[740px] md:mt-0 flex-col sm:h-[740px] pb-20 '>
           <div className='flex pt-12 sm:pt-0 justify-center '>
             <Image 
                   src={ShadyLogoWhite}
@@ -25,21 +25,20 @@ const Hero = () => {
                   />
           </div>
 
-          <h1 className="h1 md:mb-6 text-6xl pt-12 md:pt-24">
+          <h1 className="h1 md:mb-6 text-6xl pt-12">
             Shady Palms<br />
             <span className='text-9xl'>
               BAR
             </span>
           </h1>
           
-          <span className="inline-block text-xl pt-6 md:pt-12">
+          <span className="inline-block text-xl pt-6 ">
               The Village Local
             </span>
           <div className="pt-6 md:pt-12 pb-8 text-[#FBB117]">
           <Button variant={'outline'} className='border-[#FBB117]'>
             <Link href='/booking'>
             Book a Table
-
             </Link>
           </Button>
           </div>
@@ -48,7 +47,7 @@ const Hero = () => {
 
           </div>
 
-          <div className='pb-12 pt-6 sm:pt-0'>
+          <div className='pb-12 pt-4'>
             <p>
             427 Logan Road, Stones Corner QLD 4120
             </p>
