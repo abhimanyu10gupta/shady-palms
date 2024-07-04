@@ -5,6 +5,8 @@ import ShadyLogoWhite from '../public/ShadyLogoWhite.png'
 import { Button } from './ui/button'
 import { Separator } from './ui/separator'
 import Link from 'next/link'
+import logowhite2 from '@/public/logowhite2.png'
+import logowhite1 from '@/public/logowhite1.png'
 
 
 const Hero = () => {
@@ -13,11 +15,11 @@ const Hero = () => {
     <div className='w-screen min-h-[740px] top-0'>
       <div className="z-0 mx-auto text-center mb-0 md:mb-20 lg:mb-[6.25rem] ">
         <div className='flex pt-10 md:pt-24 sm:justify-evenly m-auto min-h-[650px]  
-          text-white z-10 bg-[#0D0C11] rounded-t-full mt-20 md:w-[600px] 
+           z-10 bg-[#0D0C11] rounded-t-full mt-20 md:w-[600px] 
           h-[740px] md:mt-0 flex-col sm:h-[740px] pb-20 '>
           <div className='flex pt-12 sm:pt-0 justify-center '>
             <Image 
-                  src={ShadyLogoWhite}
+                  src={logowhite2}
                   alt= "shady_logo"
                   height={160}
                   width={160}
@@ -26,8 +28,8 @@ const Hero = () => {
           </div>
 
           <h1 className="h1 md:mb-6 text-6xl pt-12">
-            Shady Palms<br />
-            <span className='text-9xl'>
+            
+            <span className='text-[12rem]'>
               BAR
             </span>
           </h1>

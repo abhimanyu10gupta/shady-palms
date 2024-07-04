@@ -10,7 +10,7 @@ export function cn(...inputs: ClassValue[]) {
 export const reserveTableSchema = () => z.object({
   name: z.string().min(3),
   phone: z.string().min(9).max(11),
-  partySize: z.string(),
+  pax: z.string(),
   date: z.date(),
   time: z.string(),
 })

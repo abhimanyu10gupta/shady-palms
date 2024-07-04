@@ -43,7 +43,7 @@ const events = [
 
 const WhatsOn = () => {
   return (
-    <div id="events" className='text-white w-full'>
+    <div id="events" className=' w-full'>
         <div className='flex flex-col'>
             <div className='p-10 pt-20 md:p-20'>
                 <h1 className='text-6xl font-bold'>

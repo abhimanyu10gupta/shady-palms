@@ -9,13 +9,13 @@ import Image5 from '@/public/image5.png'
 
 const Images = () => {
   return (
-    <div className='text-white w-full '>
+    <div className=' w-full '>
         <div className='flex justify-center text-center font-bold text-5xl p-5 pt-20 pb-20 md:p-36'>
         Come on down & Grab a Pint
         </div>
 
-        <div className='flex flex-col p-0 md:flex-row h-screen md:h-[652px]'>
-            <div className='w-full h-1/2 md:w-1/2 md:h-full m-auto relative'>
+        <div className='flex flex-col p-0 md:flex-row h-screen md:h-[652px] w-screen overflow-hidden'>
+            <div className='w-full h-1/2 md:w-1/2 md:h-full m-auto relative hover:scale-105 transition ease-in-out duration-300 z-30'>
             <Image 
                 src={Image2}
                 alt={""}
@@ -25,12 +25,12 @@ const Images = () => {
             </div>
             <div className='w-full h-1/2 md:w-1/2 md:h-full flex flex-col '>
                     <div className='flex h-1/2'>
-                    <div className='w-1/2 h-full relative p-1'>
+                    <div className='w-1/2 h-full relative p-1 hover:scale-105 transition ease-in-out duration-300 border-solid border-red-950 border-8'>
                         <Image 
                             src={Image1}
                             alt={""}
                             layout="fill" objectFit="cover"
-                            className='p-1'
+                            className=''
 
                             
                         />

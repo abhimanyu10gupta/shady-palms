@@ -1,7 +1,7 @@
 import React from 'react'
 import { Separator } from '@/components/ui/separator'
 
-const MenuItem = ({name, description, price}: MenuItemsProps) => {
+const MenuItem = ({name, description, price}: MenuItemProps) => {
   return (
     <div className='w-full'>
         <Separator />

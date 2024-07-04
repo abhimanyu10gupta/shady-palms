@@ -45,6 +45,7 @@ const ReserveTable = () => {
   const [time, setTime] = React.useState('');
   const formSchema = reserveTableSchema();
   const [date, setDate] = React.useState<Date>()
+  const [loading, setLoading] = React.useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -52,9 +53,10 @@ const ReserveTable = () => {
 
 function onSubmit(data: z.infer<typeof formSchema>) {
   console.log("haha")
-  console.log(JSON.stringify(data))
+  console.log(JSON.stringify(data) + "asdlkjflaksdjflkdsjlkfsjlksdjflksjdlkfj")
+  setLoading(true)
 
-  const apiEndpoint = '/api/email';
+  const apiEndpoint = '/api/booking';
 
   fetch(apiEndpoint, {
     method: 'POST',
@@ -62,31 +64,32 @@ function onSubmit(data: z.infer<typeof formSchema>) {
   })
     .then((res) => res.json())
     .then((response) => {
-      alert(response.message);
+      toast({
+        title: "You submitted the following values:",
+        description: (
+          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+            <code className="">{JSON.stringify(response, null, 2)}</code>
+          </pre>
+        ),
+      })
     })
     .catch((err) => {
       alert(err);
     });
 
-  toast({
-    title: "You submitted the following values:",
-    description: (
-      <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-        <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-      </pre>
-    ),
-  })
+  
 
 }
   return (
     <div className='w-screen flex justify-center p-5 pt-20 pb-20 font-bold md:p-24 flex-col '>
       <div className='w-full flex justify-center'>
-        <p className='text-white text-6xl '>
+        <p className=' text-6xl '>
           Reserve a Table
         </p>
       </div>
 
-      <div className='flex w-full justify-center text-white pt-16 md:p-32 md:flex-col m-auto'>
+      {(!loading)?
+      <div className='flex w-full justify-center pt-16 md:p-32 md:flex-col m-auto'>
       <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <div className='flex flex-col sm:flex-row justify-evenly'>
@@ -113,7 +116,7 @@ function onSubmit(data: z.infer<typeof formSchema>) {
                 <FormItem>
                   <FormLabel>Phone Number</FormLabel>
                   <FormControl>
-                    <Input placeholder="0xxx-xxx-xxx" {...field} />
+                    <Input placeholder="" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -126,10 +129,10 @@ function onSubmit(data: z.infer<typeof formSchema>) {
         </div>
         <div className='flex flex-col sm:flex-row'>
         <div className='flex basis-1/5 flex-col justify-center m-auto' >
-          <div className='text-white flex justify-center'>
+          <div className=' flex justify-center'>
             <FormField
             control={form.control}
-            name="partySize"
+            name="pax"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Party Size</FormLabel>
@@ -197,7 +200,6 @@ function onSubmit(data: z.infer<typeof formSchema>) {
             </div>
           </div>
           <div className='flex basis-1/5 flex-col m-auto'>
-
             <div className='flex justify-center'>
             <FormField
             control={form.control}
@@ -232,8 +234,20 @@ function onSubmit(data: z.infer<typeof formSchema>) {
         </Form>
 
       </div>
+      : 
+    
+    (<div>
+      <div className='flex justify-center p-12'>
+        <p className=' '>
+          Thank you. Your reservation has been submitted. We will be in touch soon for confirmation. 
+        </p>
+      </div>
+    </div>)}
+  
+
     </div>
-  )
-}
+    
+    
+)}
 
 export default ReserveTable

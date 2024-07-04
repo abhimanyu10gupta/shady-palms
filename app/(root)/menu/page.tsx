@@ -6,7 +6,7 @@ import MenuItem from '@/components/MenuItem'
 
 const Menu = () => {
   return (
-    <div className='w-screen text-white'>
+    <div className='w-screen'>
       <div className='flex flex-col mx-auto max-w-[980px] pt-16 pb-20 p-2'>
 
         <div className=''>

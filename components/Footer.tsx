@@ -3,21 +3,24 @@ import Image from 'next/image'
 import ShadyLogo  from '@/public/ShadyLogoWhite.png';
 import { Separator } from '@/components/ui/separator';
 import Map from './Map';
-
+import logowhite from '@/public/logowhite1.png'
+import logowhite2 from '@/public/logowhite2.png'
 const Footer = () => {
   return (
-    <div id="footer" className='w-full bg-[#0D0C11] text-white'>
+    <div id="footer" className='w-full bg-[#0D0C11]'>
       <div className='flex flex-col'>
       <Map />
         <div className='basis-4/5 flex flex-col md:flex-row text-center justify-center'>
           <div className='flex flex-col justify-center m-auto p-5 basis-1/3'>
-            <div className='mx-auto w-1/2'>
+            <div className='mx-auto flex justify-center w-1/2 p-4'>
               <Image 
-                src={ShadyLogo}
+                src={logowhite2}
                 alt={""}
-                
+                height={180}
+                width={180}
+                className=""
               />
-              </div>
+            </div>
 
               <p className=''>
                 What's On
