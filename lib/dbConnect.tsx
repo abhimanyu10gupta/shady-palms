@@ -2,7 +2,7 @@
 
 import mongoose from "mongoose";
 
-const dbConnect = () => {
+export async function dbConnect() {
   if (mongoose.connection.readyState >= 1) {
     return;
   }

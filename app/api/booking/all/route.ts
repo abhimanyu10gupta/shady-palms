@@ -5,10 +5,11 @@ import Booking from "@/models/booking";
 
 
 export async function GET(request: Request) {
-    
-    dbConnect();
+
+    await dbConnect();
 
     const res = await Booking.find({})
 
     return Response.json(res)
 }
+
