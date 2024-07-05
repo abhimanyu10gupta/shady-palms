@@ -15,47 +15,15 @@ import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
-    <div className=''>
-
-      <div className="-z-10 fixed top-0">
-        <div className="bg-[linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 1))] w-screen max-w-screen h-[350px] md:h-[1000px] relative">
-          <Image 
-            src={ShadyBanner5}
-            alt={'shady_banner'}
-            fill
-            style={{
-              filter: 'contrast(115%)',
-              opacity: 0.6,
-              backgroundColor: "linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0))"
-              
-            }}
-          />
-        </div>
-        
-        
-      </div>
-      {/* <div className="relative z-40 top-0">
-        </div> */}
-
-
-      <div className="z-10 flex flex-col relative">
+    <div className='top-0'>
         <Hero />
-        <div className="p-0 z-10 bg-[#0D0C11] relative">
-        
-
+        <div className="">        
           <About />
-
           <Separator className="w-4/5 mx-auto"/>
-
           <WhatsOn />
-
           <Images />
-
           <ReserveTable />
         </div>
-
-      </div>
-
     </div>
   );
 }

@@ -10,7 +10,7 @@ const Sidebar = ({
   return (
 
     <div
-      className={`fixed flex flex-col justify-center items-center z-10 top-0 right-0 h-full w-full bg-white text-black transition-transform duration-300 transform ${
+      className={`fixed flex flex-col justify-center items-center z-20 top-0 right-0 h-screen w-full bg-white text-black transition-transform duration-300 transform ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}
     >

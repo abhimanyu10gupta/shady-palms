@@ -22,7 +22,7 @@ const events = [
     {
         title: "Happy Hour",
         description: "20% on House Spirits",
-        days: "Wednesday and Sunday 3pm-6pm",
+        days: "Wednesday and Sunday ",
         image: Event3,
     },
     {
@@ -55,7 +55,7 @@ const WhatsOn = () => {
            {events.map((event, i) => {
             return(
             i%2===0 ? <Fragment key={i}>
-<div className='flex flex-col sm:flex-row w-full justify-center pt-10 pb-10'>
+<div className='flex flex-col sm:flex-row w-full md:justify-center pt-10 pb-10'>
                 <div className='basis-1/2 flex w-full justify-center'>
                     <Image 
                         src={event.image}
@@ -64,7 +64,7 @@ const WhatsOn = () => {
                         height={500}
                     />
                 </div>
-                <div className='basis-1/2 flex justify-start pt-6'>
+                <div className='basis-1/2 flex justify-end md:justify-center pt-6'>
                     <div className='flex flex-col justify-center'>
                         <h2 className='text-2xl '>
                             {event.title}
@@ -86,7 +86,7 @@ const WhatsOn = () => {
             : 
             <Fragment key={i}>
                 <div className='flex sm:flex-row flex-col-reverse md:flex w-full justify-center'>
-                <div className='basis-1/2 flex'>
+                <div className='basis-1/2 flex md:justify-center'>
                 <div className='flex flex-col pt-6 justify-center'>
                         <h2 className='text-2xl '>
                             {event.title}

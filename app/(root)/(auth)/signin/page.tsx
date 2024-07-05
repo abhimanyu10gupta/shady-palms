@@ -29,7 +29,7 @@ export default function SignupPage() {
 
 
     return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-white">
+    <div className="flex flex-col items-center justify-center min-h-screen py-2">
         <h1>{loading ? "Processing" : "Login"}</h1>
         <hr />
         
@@ -40,6 +40,7 @@ export default function SignupPage() {
             value={user.email}
             onChange={(e) => setUser({...user, email: e.target.value})}
             placeholder="email"
+            className="text-black"
             />
         <label htmlFor="password">password</label>
         <input 
@@ -48,6 +49,8 @@ export default function SignupPage() {
             value={user.password}
             onChange={(e) => setUser({...user, password: e.target.value})}
             placeholder="password"
+            className="text-black"
+
             />
             <button
             onClick={onLogin}

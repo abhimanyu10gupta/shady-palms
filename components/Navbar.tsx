@@ -43,18 +43,22 @@ const Navbar = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
   return ( 
-    <header className={`navbar top-0 transition-transform duration-300 transform ${show ? 'translate-y-0' : '-translate-y-full'} sticky p-5 pl-12 pr-12 mx-auto z-20 md:items-center `} id='navbar'>
-          <div className="container hidden relative py-6 sm:flex justify-between ">
-            <Link href='/'>
-            <Image 
-              src={logowhite}
-              alt= "shady_logo"
-              height={160}
-              width={160}
-              className='hidden md:flex'
-            />
-            </Link>
-           
+    <header className={`top-0 transition-transform duration-300 transform 
+    ${show ? 'translate-y-0' : '-translate-y-full'} fixed z-20  w-screen`}>
+      {/* <div className="p-10 md:pl-20 md:pr-20"> */}
+          <div className="hidden container relative py-6 md:flex md:p-10 pl-12 pr-12 mx-auto md:items-center justify-between ">
+            <div className="">
+              <Link href='/'>
+                <Image 
+                  src={logowhite}
+                  alt= "shady_logo"
+                  height={160}
+                  width={160}
+                  className=''
+                />
+              </Link>
+           </div>
+           <div className="">
             <ul className="hidden md:flex justify-between my-auto gap-x-12">
               <li key={"one"}>
                 <Link href="/">
@@ -77,15 +81,10 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
+            </div>
           </div>
-          <div className='flex justify-end md:hidden relative my-4'>
-            <Image 
-                src={ShadyLogoWhite}
-                alt= "shady_logo"
-                height={160}
-                width={160}
-                className='hidden md:flex'
-              />
+
+          <div className='container md:hidden py-6 relative flex justify-end'>
             <button type="button" className="" onClick={handleDrawerToggle}>
               {/* Menu icon */}
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +96,10 @@ const Navbar = () => {
                 </svg>
             </button>
             <Sidebar isOpen={isDrawerOpen} toggle={handleDrawerToggle} />
+
           </div>
+          {/* </div> */}
+
     </header>
   )
 }

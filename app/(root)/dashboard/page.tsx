@@ -62,8 +62,8 @@ export default async function Dashboard() {
 const bookings = await getBookings()
 console.log(bookings)
 return (
-    <div className=''>
-      <div className=''>
+    <div className='  min-h-screen py-2 '>
+      <div className='bottom-0'>
       <Table>
         <TableCaption>A list of your recent bookings.</TableCaption>
           <TableHeader>
