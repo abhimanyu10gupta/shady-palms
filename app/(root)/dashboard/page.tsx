@@ -31,7 +31,7 @@ const getCookie = async (name: string) => {
 
 async function getBookings() {
   const cookie = await getCookie('token');
-  const url = "/api/booking/all";
+  const url = "https://shady-palms.vercel.app/api/booking/all";
   const options = {
     // method: "GET",
     withCredentials: true,
