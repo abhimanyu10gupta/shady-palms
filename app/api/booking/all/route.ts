@@ -6,15 +6,17 @@ import { NextRequest, NextResponse } from "next/server";
 
 dbConnect();
 
-export async function GET(request: NextRequest) {
+export async function GET(request: Request) {
 
     try {
     const res = await Booking.find({})
-    return NextResponse.json(res)
+
+
+    return Response.json(res)
 
     } catch (error: any) {
         console.log(error.message)
     }
-    return NextResponse.json({status: "500"})
+    return Response.json({status: "500"})
 }
 

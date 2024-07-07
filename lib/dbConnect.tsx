@@ -10,7 +10,8 @@ export async function dbConnect() {
   mongoose.set("strictQuery", false);
   try{
     console.log("here" + process.env.DB_URI)
-    mongoose.connect(process.env.DB_URI!);
+    const prom = mongoose.connect(process.env.DB_URI!);
+    console.log(prom)
 
   } catch(error:any) {
     console.log(error)
