@@ -5,18 +5,7 @@ import { Button } from './ui/button';
 import Event1 from '../public/event1.png'
 import Event2 from '../public/event2.png'
 import Event3 from '../public/image5.png'
-
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-
-const MenuProps = {
-    PaperProps: {
-      style: {
-        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-        width: 250,
-      },
-    },
-  };
+import Link from 'next/link'
 
 const events = [
     {
@@ -43,13 +32,11 @@ const events = [
 
 const WhatsOn = () => {
   return (
-    <div id="events" className=' w-full'>
+    <div id="events" className='container w-full p-0'>
         <div className='flex flex-col'>
-            <div className='p-10 pt-20 md:p-20'>
-                <h1 className='text-6xl font-bold'>
-                    What's On
-                </h1>
-            </div>
+            <h1 className='p-8 md:p-16 text-6xl font-bold'>
+                What's On
+            </h1>
 
             <div className='container flex w-full flex-col justify-center'>
            {events.map((event, i) => {
@@ -64,7 +51,7 @@ const WhatsOn = () => {
                         height={500}
                     />
                 </div>
-                <div className='basis-1/2 flex justify-end md:justify-center pt-6'>
+                <div className='basis-1/2 flex w-full justify-end md:justify-center pt-6'>
                     <div className='flex flex-col justify-center'>
                         <h2 className='text-2xl '>
                             {event.title}
@@ -72,12 +59,14 @@ const WhatsOn = () => {
                         <p className='pt-2'>
                             {event.description}
                         </p>
-                        <p className='pt-2'>
+                        <p className='pt-2 pb-2'>
                             {event.days}
                         </p>
-                        <Button className='pt-4'>
-                            Book a table
+                        <Link href="/booking">
+                        <Button variant="outline" className=''>
+                             Book a table 
                         </Button>
+                        </Link>
 
                     </div>
                 </div>
@@ -88,16 +77,16 @@ const WhatsOn = () => {
                 <div className='flex sm:flex-row flex-col-reverse md:flex w-full justify-center'>
                 <div className='basis-1/2 flex md:justify-center'>
                 <div className='flex flex-col pt-6 justify-center'>
-                        <h2 className='text-2xl '>
+                        <h2 className='text-2xl'>
                             {event.title}
                         </h2>
                         <p className='pt-2'>
                             {event.description}
                         </p>
-                        <p className='pt-2'>
+                        <p className='pt-2 pb-2'>
                             {event.days}
                         </p>
-                        <Button className='pt-4'>
+                        <Button variant="outline" className=''>
                             Book a table
                         </Button>
 

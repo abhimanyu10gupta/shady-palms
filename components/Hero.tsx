@@ -14,7 +14,9 @@ import ShadyBanner5 from '@/public/ShadyBanner5.png'
 
 const Hero = () => {
   return (
-    <div className='w-screen h-[350px] md:h-[1000px] min-h-[740px] top-0 bg-heroImage bg-fixed bg-no-repeat bg-top pt-1 md:p-48 bg-100%'>
+    <div className='w-screen h-[350px] md:h-[1000px] min-h-[740px] top-0 bg-heroImage backdrop-saturate-200
+
+ bg-fixed bg-no-repeat bg-top pt-1 md:p-48 bg-100%'>
       <div className="z-0 mx-auto text-center mb-20 md:mb-20 lg:mb-[6.25rem]">
         <div className='flex md:pt-24 justify-evenly m-auto min-h-[650px]  
            z-10 bg-[#0D0C11] rounded-t-full mt-20 md:w-[600px] 
@@ -39,7 +41,7 @@ const Hero = () => {
           <div className="pt-6 md:pt-12 pb-8 text-[#FBB117]">
           <Link href='/booking'>
 
-          <Button variant={'outline'} className='border-[#FBB117]'>
+          <Button variant={'outline'} className='border-[#FBB117] hover:bg-[#FBB117]'>
             Book a Table
           </Button>
           </Link>

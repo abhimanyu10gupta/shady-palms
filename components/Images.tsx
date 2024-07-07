@@ -10,7 +10,7 @@ import Image5 from '@/public/image5.png'
 const Images = () => {
   return (
     <div className='w-full '>
-        <div className='flex justify-center text-center font-bold text-5xl md:text-7xl p-5 pt-20 pb-20 md:p-36'>
+        <div className=' container w-full flex justify-center text-center font-bold text-5xl md:text-7xl p-8 pt-16 pb-16 md:p-24'>
         Come on down & Grab a Pint
         </div>
 

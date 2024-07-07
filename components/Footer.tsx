@@ -14,14 +14,13 @@ const Footer = () => {
           <div className='flex flex-col justify-center m-auto p-5 basis-1/3'>
             <div className='mx-auto flex justify-center w-1/2 p-4'>
               <Image 
-                src={logowhite2}
+                src={logowhite}
                 alt={""}
                 height={180}
                 width={180}
                 className=""
               />
             </div>
-
               <p className=''>
                 What's On
               </p>
@@ -48,7 +47,7 @@ const Footer = () => {
               Contact
             </h1>
             <p>
-              123456789
+            (07) 3324 2917
             </p>
             <p>
               shadypalmscafe@gmail.com
