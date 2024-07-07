@@ -7,7 +7,7 @@ export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname
 
   // Define paths that are considered public (accessible without a token)
-  const isPublicPath = path === '/api/auth/signin' || path === '/api/auth/signup' 
+  const isPublicPath = path === '/api/auth/signin' || path === '/api/auth/signup' || path === '/'
   
   // Get the token from the cookies
 
@@ -21,7 +21,7 @@ export function middleware(request: NextRequest) {
 
 // If trying to access a protected path without a token, redirect to the login page
   if (!isPublicPath && !token) {
-    return NextResponse.redirect(new URL('/api/auth/signin', request.nextUrl))
+    return NextResponse.redirect(new URL('/auth/signin', request.nextUrl))
   }
     
 }
