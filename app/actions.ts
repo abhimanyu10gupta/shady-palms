@@ -36,9 +36,11 @@ export async function getBookings() {
     const options = {
       withCredentials: true,
       headers: {
-        Cookie: `token=${cookie};`
+        Cookie: `token=${cookie};`,
+        'Cache-Control': 'no-cache'
     },
-    cache: "no-store"
+    cache: "no-store",
+    
     };
   try {
     const res = await axios.get(url, options)
