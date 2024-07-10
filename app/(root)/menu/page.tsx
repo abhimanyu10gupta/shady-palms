@@ -7,7 +7,7 @@ import MenuItem from '@/components/MenuItem'
 const Menu = () => {
   return (
     <div className='w-screen'>
-      <div className='flex flex-col mx-auto max-w-[980px] pt-16 pb-20 p-2'>
+      <div className='flex flex-col mx-auto max-w-[980px] pt-48 pb-20 p-2'>
 
         <div className=''>
           <h1 className='text-2xl'>
@@ -18,13 +18,10 @@ const Menu = () => {
         <h1 className='text-4xl'>
           Food Menu
         </h1>
-        {/* <p className='pt-4 text-xl'>
-          Food Menu
-        </p> */}
       </div>
       <div>
       {menuItemsFood.map((item)=> (
-        <MenuItem name={item.name} description={item.description} price={item.price}/>
+        <MenuItem key={item.name} name={item.name} description={item.description} price={item.price}/>
       ))}
       </div>
       <Separator />

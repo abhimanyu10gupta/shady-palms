@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import {useRouter} from "next/navigation";
 import axios from "axios";
-
+import { Button } from '@/components/ui/button'
 
 export default function SignupPage() {
     const router = useRouter();
@@ -29,34 +29,39 @@ export default function SignupPage() {
 
 
     return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-        <h1>{loading ? "Processing" : "Login"}</h1>
+    <div className="min-h-screen flex justify-center py-2">
+        <div className="container flex flex-col items-center justify-center ">
+        <h1 className="text-4xl p-8">{loading ? "Processing" : "Login"}</h1>
         <hr />
         
-        <label htmlFor="email">email</label>
+        <label htmlFor="email">Email</label>
         <input 
             id="email"
             type="text"
             value={user.email}
             onChange={(e) => setUser({...user, email: e.target.value})}
             placeholder="email"
-            className="text-black"
+            className="text-black m-2"
             />
-        <label htmlFor="password">password</label>
+        <label htmlFor="password">Password</label>
         <input 
             id="password"
             type="password"
             value={user.password}
             onChange={(e) => setUser({...user, password: e.target.value})}
             placeholder="password"
-            className="text-black"
+            className="text-black m-2"
 
             />
-            <button
+            <Button
             onClick={onLogin}
-            className="white">Sign in</button>
-            <Link href="/signup">Visit signup page</Link>
-            
+            className="m-4"
+            variant="outline">
+                Sign in
+            </Button>
+            {/* <Link href="/signup">Visit signup page</Link> */}
+        
+        </div>
         </div>
     )
 

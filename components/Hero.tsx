@@ -23,15 +23,19 @@ const Hero = () => {
           h-[740px] md:mt-0 flex-col sm:h-[740px] pb-20 '>
           <div className='flex pt-12 sm:pt-0 justify-center '>
             <Image 
-                  src={logowhite2}
+                  src={logowhite1}
                   alt= "shady_logo"
                   height={160}
-                  width={160}
+                  width={250}
                   className=""
                   />
           </div>
 
-          <h1 className="h1 md:mb-6 text-9xl pt-12">
+          {/* <h1 className="text-6xl pt-12">
+            Shady Palms
+          </h1> */}
+
+          <h1 className=" md:mb-6 text-9xl pt-12 ">
               BAR
           </h1>
           
@@ -41,7 +45,7 @@ const Hero = () => {
           <div className="pt-6 md:pt-12 pb-8 text-[#FBB117]">
           <Link href='/booking'>
 
-          <Button variant={'outline'} className='border-[#FBB117] hover:bg-[#FBB117]'>
+          <Button variant={'outline'} className='border-[#FBB117] hover:bg-[#fde7b9]'>
             Book a Table
           </Button>
           </Link>

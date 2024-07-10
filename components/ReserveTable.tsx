@@ -181,7 +181,7 @@ function onSubmit(data: z.infer<typeof formSchema>) {
                           </Button>
                         </FormControl>
                       </PopoverTrigger>
-                      <PopoverContent className="w-auto p-0" align="start">
+                      <PopoverContent className="w-auto p-0 bg-black" align="start">
                         <Calendar
                           mode="single"
                           selected={field.value}
@@ -228,7 +228,7 @@ function onSubmit(data: z.infer<typeof formSchema>) {
         </div>
         
         <div className='flex basis-1/5 justify-center items-center' >
-          <Button type="submit">Reserve Table</Button>
+          <Button type="submit" variant="outline">Reserve Table</Button>
         </div>
           </form>
         </Form>

@@ -17,6 +17,7 @@ declare interface MenuItemProps {
   }
 
 declare interface BookingProps {
+  _id: Schema.Types.ObjectId,
   name: string;
   email: string;
   date: Date;

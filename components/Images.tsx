@@ -20,7 +20,7 @@ const Images = () => {
                 src={Image2}
                 alt={""}
                 fill
-                className='hover:scale-105 transition ease-in-out duration-300'
+                className='hover:scale-105 transition duration-1000 ease-in-out '
                 />
             </div>
             <div className='w-full h-1/2 md:w-1/2 md:h-full flex flex-col '>
@@ -31,7 +31,7 @@ const Images = () => {
                             alt={"im1"}
                             fill
                             objectFit="cover"
-                            className='hover:scale-105 transition ease-in-out duration-300'
+                            className='hover:scale-105 transition ease-in-out duration-1000'
 
                             
                         />
@@ -41,7 +41,7 @@ const Images = () => {
                             src={Image3}
                             alt={"im3"}
                             layout="fill" objectFit="cover"
-                            className='hover:scale-105 transition ease-in-out duration-300'
+                            className='hover:scale-105 transition ease-in-out duration-1000'
 
                         />
                     </div>
@@ -53,7 +53,7 @@ const Images = () => {
                             src={Image4}
                             alt={""}
                             layout="fill" objectFit="cover"
-                            className='hover:scale-105 transition ease-in-out duration-300'
+                            className='hover:scale-105 transition ease-in-out duration-1000'
                             />
                     </div>
                     <div className='w-1/2 h-full relative m-1 overflow-hidden'>
@@ -61,7 +61,7 @@ const Images = () => {
                             src={Image5}
                             alt={""}
                             layout="fill" objectFit="cover"
-                            className='hover:scale-105 transition ease-in-out duration-300'
+                            className='hover:scale-105 transition ease-in-out duration-1000'
 
                         />
                     </div>

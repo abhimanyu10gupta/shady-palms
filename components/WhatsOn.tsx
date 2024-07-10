@@ -62,11 +62,13 @@ const WhatsOn = () => {
                         <p className='pt-2 pb-2'>
                             {event.days}
                         </p>
-                        <Link href="/booking">
+
                         <Button variant="outline" className=''>
-                             Book a table 
+                            <Link href="/booking">
+                                Book a table 
+                             </Link>
                         </Button>
-                        </Link>
+
 
                     </div>
                 </div>
@@ -87,7 +89,9 @@ const WhatsOn = () => {
                             {event.days}
                         </p>
                         <Button variant="outline" className=''>
-                            Book a table
+                            <Link href="/booking">
+                                Book a table 
+                             </Link>                        
                         </Button>
 
                     </div>
