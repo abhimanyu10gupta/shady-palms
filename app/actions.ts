@@ -50,10 +50,10 @@ export async function getBookings() {
     catch(error:any) {
       console.log(error)
     }
-    // finally {
-    //   revalidatePath('https://shady-palms.vercel.app/api/booking/all')
+    finally {
+      revalidatePath('https://shady-palms.vercel.app/api/booking/all')
 
-    // }
+    }
 
     return null
   

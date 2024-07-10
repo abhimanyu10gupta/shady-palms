@@ -20,13 +20,12 @@ const Hero = () => {
       <div className="z-0 mx-auto text-center mb-20 md:mb-20 lg:mb-[6.25rem]">
         <div className='flex md:pt-24 justify-evenly m-auto min-h-[650px]  
            z-10 bg-[#0D0C11] rounded-t-full mt-20 md:w-[600px] 
-          h-[740px] md:mt-0 flex-col sm:h-[740px] pb-20 '>
+          h-[740px] md:mt-0 flex-col sm:h-[740px] '>
           <div className='flex pt-12 sm:pt-0 justify-center '>
             <Image 
                   src={logowhite1}
                   alt= "shady_logo"
-                  height={160}
-                  width={250}
+                  width={260}
                   className=""
                   />
           </div>
@@ -51,7 +50,7 @@ const Hero = () => {
           </Link>
 
           </div>
-          <div className='w-2/3 mx-auto'>
+          <div className='w-2/3 mx-auto pt-12'>
             <Separator />
 
           </div>
