@@ -31,7 +31,7 @@ export async function deleteBooking(id:any) {
 }
 
 export async function getBookings() {
-    revalidatePath('https://shady-palms.vercel.app/api/booking/all')
+    revalidatePath('https://shady-palms.vercel.app/dashboard')
     console.log('revalidating?')
     const cookie = await getCookie('token');
     const url = "https://shady-palms.vercel.app/api/booking/all";

@@ -8,7 +8,7 @@ import { revalidatePath } from "next/cache";
 export async function POST(request: Request) {
     dbConnect();
     
-    revalidatePath('https://shady-palms.vercel.app/api/booking/all')
+    revalidatePath('/')
     console.log("revalidated")
     const { name, pax, time, phone, date } = await request.json()
 
