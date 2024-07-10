@@ -38,6 +38,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import { revalidatePath } from 'next/cache';
 
 const ReserveTable = () => {
 
@@ -64,6 +65,7 @@ function onSubmit(data: z.infer<typeof formSchema>) {
   })
     .then((res) => res.json())
     .then((response) => {
+      console.log('revalidating')
       toast({
         title: "You submitted the following values:",
         description: (

@@ -2,12 +2,14 @@
 
 import dbConnect from "@/lib/dbConnect"
 import Booking from "@/models/booking";
+import { revalidatePath } from "next/cache";
 
 
 export async function POST(request: Request) {
     dbConnect();
     
-
+    revalidatePath('https://shady-palms.vercel.app/api/booking/all')
+    console.log("revalidated")
     const { name, pax, time, phone, date } = await request.json()
 
     const book = { 

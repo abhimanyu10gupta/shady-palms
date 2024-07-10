@@ -3,12 +3,15 @@ import React from 'react'
 
 import { deleteBooking, getBookings } from '@/app/actions'
 import Bookings from '@/components/Bookings'
+import { revalidatePath } from 'next/cache'
 
 
 export default async function Dashboard() {
 
+revalidatePath('/')
 
 const bookings = await getBookings()
+
 return (
   
     <div className='container md:pt-48'>
