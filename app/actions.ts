@@ -22,7 +22,7 @@ export async function deleteBooking(id:any) {
     try {
       const res = await Booking.findByIdAndDelete(id);
       console.log(res)
-      revalidatePath('https://shady-palms.vercel.app/api/booking/all')
+      revalidatePath('https://shady-palms.vercel.app/api/booking')
     } catch (e) {
       console.log(e)
 
@@ -30,23 +30,35 @@ export async function deleteBooking(id:any) {
 }
 
 export async function getBookings() {
-    revalidatePath('https://shady-palms.vercel.app/dashboard')
+    revalidatePath('https://shady-palms.vercel.app/booking')
     console.log('revalidating?')
     const cookie = await getCookie('token');
     const url = "https://shady-palms.vercel.app/api/booking/all";
     const options = {
-      withCredentials: true,
+      credentials: 'include',
       headers: {
         Cookie: `token=${cookie};`,
         'Cache-Control': 'no-cache'
     },
     cache: "no-store",
-    next: { revalidate: 0 }
+    // next: { revalidate: 0 }
     };
   try {
-    const res = await axios.get(url, options)
-    if (res.data) {
-      const bookings = await res.data
+
+    const res = await fetch(url, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        Cookie: `token=${cookie};`,
+        'Cache-Control': 'no-cache'
+    },
+    cache: "no-store",
+    // next: { revalidate: 0 }
+    })
+
+    // const res = await axios.get(url, options)
+    if (res.body) {
+      const bookings = await res.json()
       console.log(res.status)
       return bookings
     }}
