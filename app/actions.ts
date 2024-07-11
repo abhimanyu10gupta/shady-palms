@@ -20,7 +20,6 @@ export async function deleteBooking(id:any) {
     await dbConnect();
     revalidatePath('/api/booking/all')
     revalidatePath('/dashboard')
-    revalidatePath('/booking')
     try {
 
       const res = await Booking.findByIdAndDelete(id);
@@ -30,7 +29,8 @@ export async function deleteBooking(id:any) {
 
     }finally {
       console.log('revalidating again')
-            revalidatePath('https://shady-palms.vercel.app/api/booking/all')
+      revalidatePath('https://shady-palms.vercel.app/api/booking/all')
+      
 
     }
 }

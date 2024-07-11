@@ -23,9 +23,11 @@ type ReservationType = {
 }
 import Link from 'next/link'
 import { ObjectId } from 'mongoose'
+import { useRouter } from 'next/navigation'
 
 
 const Bookings = (bookings: any) => {
+
     console.log(bookings)
   return (
     <div className='  min-h-screen py-2 '>

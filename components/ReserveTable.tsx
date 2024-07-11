@@ -63,9 +63,11 @@ function onSubmit(data: z.infer<typeof formSchema>) {
     method: 'POST',
     body: JSON.stringify(data),
   })
-    .then((res) => res.json())
+    .then((res) => {res.json()
+
+})
     .then((response) => {
-      console.log('revalidating')
+      
       toast({
         title: "You submitted the following values:",
         description: (
