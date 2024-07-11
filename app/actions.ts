@@ -23,7 +23,6 @@ export async function deleteBooking(id:any) {
       const res = await Booking.findByIdAndDelete(id);
       console.log(res)
       revalidatePath('https://shady-palms.vercel.app/api/booking/all')
-
     } catch (e) {
       console.log(e)
 
@@ -42,7 +41,7 @@ export async function getBookings() {
         'Cache-Control': 'no-cache'
     },
     cache: "no-store",
-    
+    next: { revalidate: 0 }
     };
   try {
     const res = await axios.get(url, options)
