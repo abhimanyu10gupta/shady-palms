@@ -4,15 +4,16 @@ import dbConnect from "@/lib/dbConnect"
 import Booking from "@/models/booking";
 import { revalidatePath } from "next/cache";
 
+export const fetchCache = 'force-no-store';
 
 export async function POST(request: Request) {
     dbConnect();
-    revalidatePath('https://shady-palms.vercel.app/api/booking/all')
-    revalidatePath('https://shady-palms.vercel.app/dashboard')
-    revalidatePath('https://shady-palms.vercel.app/booking')
+    // revalidatePath('https://shady-palms.vercel.app/api/booking/all')
+    // revalidatePath('https://shady-palms.vercel.app/dashboard')
+    // revalidatePath('https://shady-palms.vercel.app/booking')
     revalidatePath('/api/booking/all')
-    revalidatePath('/dashboard')
-    revalidatePath('/booking')
+    // revalidatePath('/dashboard')
+    // revalidatePath('/booking')
     // revalidatePath('https://shady-palms.vercel.app/booking')
     console.log("revalidated")
     const { name, pax, time, phone, date } = await request.json()

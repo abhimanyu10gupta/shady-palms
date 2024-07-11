@@ -43,7 +43,7 @@ const Navbar = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
   return ( 
-    <header className={`top-0 transition-transform duration-300 transform 
+    <header className={`top-0 transition-transform duration-700 transform 
     ${show ? 'translate-y-0' : '-translate-y-full'} fixed z-20  w-screen`}>
       {/* <div className="p-10 md:pl-20 md:pr-20"> */}
           <div className="hidden container relative py-6 md:flex md:p-10 pl-12 pr-12 mx-auto md:items-center justify-between ">

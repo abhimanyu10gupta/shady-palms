@@ -7,6 +7,7 @@ import Booking from "@/models/booking";
 import { revalidatePath } from 'next/cache';
 import { ObjectId } from 'mongoose';
 
+
 const getCookie:any = async (name: string) => {
     return cookies().get(name)?.value ?? '';
   }
@@ -30,8 +31,6 @@ export async function deleteBooking(id:any) {
     }finally {
       console.log('revalidating again')
       revalidatePath('https://shady-palms.vercel.app/api/booking/all')
-      
-
     }
 }
 
