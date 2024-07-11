@@ -13,6 +13,8 @@ import Footer from "@/components/Footer";
 import ReserveTable from "@/components/ReserveTable";
 import { Separator } from "@/components/ui/separator";
 
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
   return (
     <div className='top-0'>

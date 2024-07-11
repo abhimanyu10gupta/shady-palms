@@ -20,17 +20,22 @@ export async function deleteBooking(id:any) {
     await dbConnect();
 
     try {
+      revalidatePath('https://shady-palms.vercel.app/api/booking/all')
+
       const res = await Booking.findByIdAndDelete(id);
       console.log(res)
-      // revalidatePath('https://shady-palms.vercel.app/dashboard')
     } catch (e) {
       console.log(e)
+
+    }finally {
+      console.log('revalidating again')
+            revalidatePath('https://shady-palms.vercel.app/api/booking/all')
 
     }
 }
 
 export async function getBookings() {
-    revalidatePath('https://shady-palms.vercel.app/booking')
+    revalidatePath('https://shady-palms.vercel.app/api/booking/all')
     console.log('revalidating?')
     const cookie = await getCookie('token');
     const url = "https://shady-palms.vercel.app/api/booking/all";
@@ -41,7 +46,7 @@ export async function getBookings() {
         'Cache-Control': 'no-cache'
     },
     cache: "no-store",
-    // next: { revalidate: 0 }
+    next: { revalidate: 0 }
     };
   try {
 
