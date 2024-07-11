@@ -5,11 +5,12 @@ import { deleteBooking, getBookings } from '@/app/actions'
 import Bookings from '@/components/Bookings'
 import { revalidatePath } from 'next/cache'
 
-export const dynamic = 'force-dynamic'
+
+export const fetchCache = 'force-no-store';
 
 export default async function Dashboard() {
 
-revalidatePath('/')
+// revalidatePath('/')
 
 const bookings = await getBookings()
 

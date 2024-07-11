@@ -4,7 +4,6 @@ import dbConnect from "@/lib/dbConnect"
 import Booking from "@/models/booking";
 import { revalidatePath } from "next/cache";
 
-export const fetchCache = 'force-no-store';
 
 export async function POST(request: Request) {
     dbConnect();
