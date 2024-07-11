@@ -15,14 +15,14 @@ const getCookie:any = async (name: string) => {
 export async function deleteBooking(id:any) {
 
     console.log("delete started", id)
-    const url = "https://shady-palms.vercel.app/api/booking/all";
+    const url = "https://shady-palms.vercel.app/api/booking/";
 
     await dbConnect();
 
     try {
       const res = await Booking.findByIdAndDelete(id);
       console.log(res)
-      revalidatePath('https://shady-palms.vercel.app/api/booking')
+      revalidatePath('https://shady-palms.vercel.app/dashboard')
     } catch (e) {
       console.log(e)
 
@@ -33,7 +33,7 @@ export async function getBookings() {
     revalidatePath('https://shady-palms.vercel.app/booking')
     console.log('revalidating?')
     const cookie = await getCookie('token');
-    const url = "https://shady-palms.vercel.app/api/booking/all";
+    const url = "http://localhost:3000/api/booking/all";
     const options = {
       credentials: 'include',
       headers: {
