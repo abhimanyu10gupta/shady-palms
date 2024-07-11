@@ -18,9 +18,10 @@ export async function deleteBooking(id:any) {
     // const url = "https://shady-palms.vercel.app/api/booking/";
 
     await dbConnect();
-
+    revalidatePath('/api/booking/all')
+    revalidatePath('/dashboard')
+    revalidatePath('/booking')
     try {
-      revalidatePath('https://shady-palms.vercel.app/api/booking/all')
 
       const res = await Booking.findByIdAndDelete(id);
       console.log(res)
