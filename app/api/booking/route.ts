@@ -1,4 +1,3 @@
-"use server"
 
 import dbConnect from "@/lib/dbConnect"
 import Booking from "@/models/booking";
@@ -40,3 +39,5 @@ export async function UPDATE(request: Request) {
     dbConnect()
     
 }
+
+export const revalidate = 0;

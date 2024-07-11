@@ -1,4 +1,3 @@
-"use server"
 
 import dbConnect from "@/lib/dbConnect"
 import Booking from "@/models/booking";
@@ -21,3 +20,4 @@ export async function GET(request: Request) {
     return Response.json({status: "500"})
 }
 
+export const revalidate = 0;
