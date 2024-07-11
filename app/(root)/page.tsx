@@ -13,7 +13,7 @@ import Footer from "@/components/Footer";
 import ReserveTable from "@/components/ReserveTable";
 import { Separator } from "@/components/ui/separator";
 
-export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store';
 
 export default function Home() {
   return (
