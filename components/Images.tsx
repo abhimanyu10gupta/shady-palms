@@ -32,8 +32,6 @@ const Images = () => {
                             fill
                             objectFit="cover"
                             className='hover:scale-105 transition ease-in-out duration-1000'
-
-                            
                         />
                     </div>
                    <div className='w-1/2 h-full relative m-1 overflow-hidden'>
